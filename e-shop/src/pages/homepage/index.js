@@ -1,3 +1,5 @@
+import './styles.scss';
+
 
 const HomePage = () => (
   <div className="homepage">
