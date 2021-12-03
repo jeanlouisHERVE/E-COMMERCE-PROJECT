@@ -1,5 +1,5 @@
 import './styles.scss';
-
+import MenuItem from '../../components/Menu-Item';
 
 const HomePage = () => (
   <div className="homepage">
