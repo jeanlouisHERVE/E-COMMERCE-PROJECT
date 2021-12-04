@@ -1,13 +1,19 @@
-import React from 'react';
-import './App.css';
-import HomePage from '../../pages/homepage';
 
-function App() {
-  return (
-    <div>
-      <HomePage />
-    </div>
-  );
-}
+import { Routes , Route } from 'react-router-dom';
+import './App.css';
+
+import HomePage from '../../pages/homepage';
+import ShopPage from '../../pages/shop';
+
+
+
+const App = () => (
+  <div className="App">
+    <Routes>
+        <Route path="/" exact element={<HomePage/>}/>
+        <Route path="/shop" exact element={<ShopPage/>}/>
+    </Routes>
+  </div> 
+);
 
 export default App;

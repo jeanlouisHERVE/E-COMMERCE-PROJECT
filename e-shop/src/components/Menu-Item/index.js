@@ -1,6 +1,7 @@
 
 import './styles.scss';
 
+
 const MenuItem = ({ title, imageUrl, size }) => (
   <div 
    
