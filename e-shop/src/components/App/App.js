@@ -6,11 +6,10 @@ import HomePage from '../../pages/homepage';
 import ShopPage from '../../pages/shop';
 
 
-
 const App = () => (
   <div className="App">
     <Routes>
-        <Route path="/" exact element={<HomePage/>}/>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/shop" exact element={<ShopPage/>}/>
     </Routes>
   </div> 
