@@ -2,7 +2,7 @@ import './App.css';
 
 //import utils
 import { Component } from 'react';
-import { Routes , Route } from 'react-router-dom';
+import { Routes , Route, Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from '../../firebase/utils';
 import { setCurrentUser } from '../../redux/user/user.actions';
@@ -59,14 +59,20 @@ class App extends Component {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/shop" exact element={<ShopPage/>}/>
             <Route path="/signin" exact element={<SignInAndSignUp/>}/>
+            {/* <Route exact path="/signin" render={() => this.props.currentUser ? (<Navigate to="/"/>) : <SignInAndSignUp/>} /> */} 
+            {/* revoir comment rediriger un utilisateur connecté sur homepage et non SignIn avec react-router-dom V6 */}
         </Routes>
       </div> 
     )
   }
 };
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+})
+
 const mapsDispachToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect (null, mapsDispachToProps)(App);
+export default connect (mapStateToProps, mapsDispachToProps)(App);
