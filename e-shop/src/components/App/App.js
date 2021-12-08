@@ -2,7 +2,7 @@ import './App.css';
 
 //import utils
 import { Component } from 'react';
-import { Routes , Route, Navigate } from 'react-router-dom';
+import { Routes , Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from '../../firebase/utils';
 import { setCurrentUser } from '../../redux/user/user.actions';
