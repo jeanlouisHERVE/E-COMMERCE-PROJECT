@@ -2,7 +2,7 @@ import './App.css';
 
 //import utils
 import { Component } from 'react';
-import { Routes , Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from '../../firebase/utils';
 import { setCurrentUser } from '../../redux/user/user.actions';
@@ -14,6 +14,7 @@ import HomePage from '../../pages/homepage';
 import ShopPage from '../../pages/shop';
 import Header from '../../components/Header';
 import SignInAndSignUp from '../../pages/sign-in-and-sign-up';
+import CheckoutPage from '../../pages/checkout';
 
 
 
@@ -57,10 +58,11 @@ class App extends Component {
     return(
       <div className="App">
         <Header/>
-        <Routes>
+        <Routes >
             <Route path="/" element={<HomePage/>}/>
-            <Route path="/shop" exact element={<ShopPage/>}/>
+            <Route path="/shop" element={<ShopPage/>}/>
             <Route path="/signin" exact element={<SignInAndSignUp/>}/>
+            <Route path="/checkout" exact element={<CheckoutPage/>}/>
             {/* <Route exact path="/signin" render={() => this.props.currentUser ? (<Navigate to="/"/>) : <SignInAndSignUp/>} /> */} 
             {/* revoir comment rediriger un utilisateur connecté sur homepage et non SignIn avec react-router-dom V6 */}
         </Routes>
