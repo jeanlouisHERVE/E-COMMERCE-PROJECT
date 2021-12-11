@@ -3,11 +3,13 @@ import { combineReducers } from 'redux';
 import userReducer from '../redux/user/user.reducer';
 import cartReducer from '../redux/cart/cart.reducer';
 import directoryReducer from '../redux/directory/directory.reducer';
+import shopReducer from '../redux/shop/shop.reducer';
 
 export default combineReducers ({
   user: userReducer,
   cart: cartReducer,
-  directory: directoryReducer
+  directory: directoryReducer,
+  shop: shopReducer
 })
 
 //Problem with redux-persist V6
