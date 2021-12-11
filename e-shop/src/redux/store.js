@@ -34,4 +34,4 @@ export default store;
 // const persistor = persistStore(store);
 
 // export default store
-// export { persistor }
+// export { persistor } 
