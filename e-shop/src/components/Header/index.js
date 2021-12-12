@@ -1,6 +1,6 @@
 import './styles.scss';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -16,24 +16,36 @@ import { ReactComponent as Logo} from '../../assets/crown.svg';
 
 const Header = ({ currentUser, hidden }) => (
 <div className="header">
-  <Link className="logo-container" to="/">
+  <NavLink className="logo-container" to="/">
     <Logo className="logo" />
-  </Link>
+  </NavLink>
   <div className="options">
-  <Link className="option" to="/shop">
+  <NavLink 
+    activeClassName="active"
+    className="option" to="/shop"
+  >
   SHOP
-  </Link>
-  <Link className="option" to="/contact">
+  </NavLink>
+  <NavLink 
+    activeClassName="active"
+    className="option" to="/contact"
+  >
   CONTACT
-  </Link>
-  <Link className="option" to="/checkout">
+  </NavLink>
+  <NavLink 
+    activeClassName="active"
+    className="option" to="/checkout"
+  >
   CHECKOUT
-  </Link>
+  </NavLink>
   {
     currentUser ?
     <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
     :
-    <Link className="option" to="/signin">SIGN IN</Link>
+    <NavLink 
+      activeClassName="active"
+      className="option" to="/signin"
+    >SIGN IN</NavLink>
   }
   <CartIcon />
   </div>
